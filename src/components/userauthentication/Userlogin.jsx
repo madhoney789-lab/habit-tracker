@@ -9,7 +9,7 @@ const Userlogin = ({ onSwitchToSignUp }) => {
     const handeChange = (e) => {
         setForm({
             ...form,
-            [e.target.name]: [e.target.value],
+            [e.target.name]: e.target.value,
         });
     };
 
