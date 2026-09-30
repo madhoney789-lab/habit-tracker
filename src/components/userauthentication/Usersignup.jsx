@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
+import "./Auth.css";
 
 const Usersignup = () => {
-    const [form, setForm] = ({
+    const [form, setForm] = useState({
         name: "",
         email: "",
         password: "",
@@ -47,7 +48,66 @@ const Usersignup = () => {
         onSwitchToLogin();
     };
     return (
-        <div>Usersignup</div>
+        <div> <h1>Create Account 🚀</h1>
+
+            <p className="subtitle">
+                Start building better habits today.
+            </p>
+
+            <form onSubmit={handleSubmit}>
+                <div className="input-group">
+                    <label>Full Name</label>
+
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Enter your name"
+                        value={form.name}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+
+                <div className="input-group">
+                    <label>Email</label>
+
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        value={form.email}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+
+                <div className="input-group">
+                    <label>Password</label>
+
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        value={form.password}
+                        onChange={handleChange}
+                        minLength="6"
+                        required
+                    />
+                </div>
+
+                <button className="submit-btn" type="submit">
+                    Create Account
+                </button>
+            </form>
+
+            <p className="switch-text">
+                Already have an account?
+
+                <button onClick={onSwitchToLogin}>
+                    Login
+                </button>
+            </p>
+        </div>
     )
 }
 
